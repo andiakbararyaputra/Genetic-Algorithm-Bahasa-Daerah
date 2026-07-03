@@ -39,7 +39,7 @@ Total: **12 kata** (lebih dari syarat minimal 10 kata).
 Pastikan Python 3 tersedia.
 
 ```bash
-cd /home/runner/work/Genetic-Algorithm-Bahasa-Daerah/Genetic-Algorithm-Bahasa-Daerah
+cd Genetic-Algorithm-Bahasa-Daerah
 python3 ga_kamus_aceh.py
 ```
 

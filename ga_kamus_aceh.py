@@ -51,6 +51,7 @@ class GeneticAlgorithmAceh:
         return [self.calculate_fitness(ind, target) for ind in population]
 
     def roulette_selection(self, population: list[str], fitness_scores: list[int]) -> list[str]:
+        # +1 supaya individu dengan fitness 0 tetap punya peluang terpilih.
         adjusted_scores = [score + 1 for score in fitness_scores]
         total = sum(adjusted_scores)
         selected = []
@@ -214,6 +215,7 @@ def main() -> None:
                 state.target = target
         elif pilihan == "3":
             target = state.target or pilih_target()
+            state.target = target
             state = ga.run_one_generation(target)
             print(f"\nGA ka dijalankan untuk target: {target}")
             print("Satu generasi lengkap ka diproses (fitness, roulette, crossover, mutasi, evaluasi).")

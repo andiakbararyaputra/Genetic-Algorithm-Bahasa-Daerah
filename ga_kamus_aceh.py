@@ -112,7 +112,7 @@ def tampilkan_kamus() -> None:
 
 
 def cari_kata() -> str | None:
-    kata = input("Peulheueh kata (Aceh/Indonesia): ").strip().lower()
+    kata = input("Peuteubiet kata (Aceh/Indonesia): ").strip().lower()
     hasil = [
         entry
         for entry in ACEH_DICTIONARY
@@ -120,19 +120,19 @@ def cari_kata() -> str | None:
     ]
 
     if not hasil:
-        print("Kata hana na lam kamus.")
+        print("Kata hana na bak kamus.")
         return None
 
     entry = hasil[0]
     print(f"Hasil: {entry['aceh']} = {entry['indonesia']}")
-    print(f"Target GA ka dipeugot ke kata Aceh: {entry['aceh']}")
+    print(f"Target GA ka dipeuget ke kata Aceh: {entry['aceh']}")
     return entry["aceh"]
 
 
 def print_population(population: list[str], title: str) -> None:
     print(f"\n=== {title} ===")
     if not population:
-        print("Data goh na. Jalankan GA sigoe lom.")
+        print("Data goh na. Jalankan GA sidroe lom.")
         return
     for i, individual in enumerate(population, start=1):
         print(f"{i}. {individual}")
@@ -141,7 +141,7 @@ def print_population(population: list[str], title: str) -> None:
 def print_fitness(population: list[str], fitness_scores: list[int], target: str | None) -> None:
     print("\n=== Nilai Fitness ===")
     if not population or not fitness_scores or not target:
-        print("Data fitness han jeuet ditampe. Jalankan proses sesuai urutan.")
+        print("Data fitness han jeuet ditampoe. Jalankan proses sesuai urutan.")
         return
     for i, (individual, score) in enumerate(zip(population, fitness_scores), start=1):
         print(f"{i}. {individual} -> fitness {score}/{len(target)}")
@@ -179,7 +179,7 @@ def pilih_target() -> str:
         pilihan = input("Nomor target: ").strip()
         if pilihan.isdigit() and 1 <= int(pilihan) <= len(ACEH_DICTIONARY):
             return ACEH_DICTIONARY[int(pilihan) - 1]["aceh"]
-        print("Pilihan hana sah, coba lom.")
+        print("Pilihan hana sah, cuba lom.")
 
 
 def tampilkan_menu() -> None:
@@ -246,7 +246,7 @@ def main() -> None:
             print("Teurimong geunaseh. Program selesai.")
             break
         else:
-            print("Pilihan hana sah. Coba lom.")
+            print("Pilihan hana sah. Cuba lom.")
 
 
 if __name__ == "__main__":

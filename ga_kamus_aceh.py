@@ -112,7 +112,7 @@ def tampilkan_kamus() -> None:
 
 
 def cari_kata() -> str | None:
-    kata = input("Peuteubiet kata (Aceh/Indonesia): ").strip().lower()
+    kata = input("Peuteubit kata (Aceh/Indonesia): ").strip().lower()
     hasil = [
         entry
         for entry in ACEH_DICTIONARY
@@ -125,14 +125,14 @@ def cari_kata() -> str | None:
 
     entry = hasil[0]
     print(f"Hasil: {entry['aceh']} = {entry['indonesia']}")
-    print(f"Target GA ka dipeuget ke kata Aceh: {entry['aceh']}")
+    print(f"Target GA ka dipeugeut ke kata Aceh: {entry['aceh']}")
     return entry["aceh"]
 
 
 def print_population(population: list[str], title: str) -> None:
     print(f"\n=== {title} ===")
     if not population:
-        print("Data goh na. Jalankan GA sidroe lom.")
+        print("Data goh nyan. Jalankan GA sidroe lom.")
         return
     for i, individual in enumerate(population, start=1):
         print(f"{i}. {individual}")
@@ -141,7 +141,7 @@ def print_population(population: list[str], title: str) -> None:
 def print_fitness(population: list[str], fitness_scores: list[int], target: str | None) -> None:
     print("\n=== Nilai Fitness ===")
     if not population or not fitness_scores or not target:
-        print("Data fitness han jeuet ditampoe. Jalankan proses sesuai urutan.")
+        print("Data fitness han jeuet ditampeue. Jalankan proses sesuai urutan.")
         return
     for i, (individual, score) in enumerate(zip(population, fitness_scores), start=1):
         print(f"{i}. {individual} -> fitness {score}/{len(target)}")

@@ -7,19 +7,22 @@ Nama: Andi Akbar Arya Putra
 NIM: 105841117924  
 Kelas: 4-F
 
-## Deskripsi Singkat
-Proyek ini adalah aplikasi console/CLI untuk simulasi **Algoritma Genetika (Genetic Algorithm)** dalam pencarian kata pada kamus bahasa daerah Aceh.
+## Tujuan Proyek
+Membangun aplikasi **console/CLI** untuk simulasi **Algoritma Genetika (Genetic Algorithm)** dalam pencarian kata pada kamus bahasa daerah **Aceh**.
 
-Program menyediakan menu interaktif untuk menampilkan kamus, mencari kata, dan menjalankan proses GA satu generasi penuh (fitness, roulette selection, crossover, mutasi, lalu evaluasi populasi baru).
+## Fitur Utama
+- Dataset kamus Aceh (kata + arti Indonesia) lebih dari 10 entri.
+- Pencarian kata (Aceh maupun Indonesia).
+- Simulasi GA string untuk mendekati kata target dari kamus.
+- Tampilan detail setiap tahap GA: populasi, fitness, roulette selection, crossover, mutasi, dan generasi baru.
+- Menu interaktif 1–10 sesuai kebutuhan tugas.
 
 ## Struktur Proyek
-- `ga_kamus_aceh.py` : aplikasi utama CLI dan logika Genetic Algorithm.
-- `README.md` : dokumentasi proyek.
+- `ga_kamus_aceh.py` — aplikasi utama CLI dan logika Genetic Algorithm.
+- `README.md` — dokumentasi proyek.
 
 ## Dataset Kamus Bahasa Aceh
-Dataset disimpan langsung di kode sebagai list sederhana berisi pasangan kata **Aceh -> Indonesia**.
-
-Contoh entri:
+Dataset disimpan langsung di kode sebagai pasangan kata **Aceh -> Indonesia**:
 - peugah = berkata
 - jak = pergi
 - pue = apa
@@ -35,16 +38,16 @@ Contoh entri:
 
 Total: **12 kata** (lebih dari syarat minimal 10 kata).
 
-## Cara Menjalankan
-Pastikan Python 3 tersedia.
+## Prasyarat
+- Python 3.x
 
+## Cara Menjalankan Program
 ```bash
 cd Genetic-Algorithm-Bahasa-Daerah
 python3 ga_kamus_aceh.py
 ```
 
-## Menu Program
-Saat dijalankan, program menampilkan menu:
+## Daftar Menu CLI
 1. Tampilkan Kamus
 2. Cari Kata
 3. Jalankan Algoritma Genetika
@@ -56,18 +59,31 @@ Saat dijalankan, program menampilkan menu:
 9. Generasi Baru
 10. Keluar
 
-## Cara Kerja Algoritma Genetika (1 Generasi)
-Untuk target kata Aceh yang dipilih:
-1. **Inisialisasi Populasi**: membangkitkan individu string acak dengan panjang sama seperti target.
-2. **Hitung Fitness**: skor berdasarkan jumlah karakter yang cocok pada posisi yang sama.
-3. **Seleksi Roulette**: memilih individu berdasarkan peluang proporsional nilai fitness (dengan penyesuaian +1 agar tidak nol).
-4. **Crossover**: pasangan parent ditukar sebagian gennya di titik potong acak.
-5. **Mutasi**: gen pada anak diubah acak sesuai mutation rate.
-6. **Generasi Baru + Evaluasi**: menampilkan populasi baru dan nilai fitness-nya.
+## Alur Genetic Algorithm (1 Generasi Penuh)
+Untuk target kata Aceh yang dipilih, proses berjalan sebagai berikut:
+1. **Inisialisasi Populasi**  
+   Membuat beberapa individu string acak dengan panjang sama seperti target.
+2. **Hitung Fitness**  
+   Fitness dihitung dari jumlah karakter yang cocok pada posisi yang sama.
+3. **Seleksi Roulette**  
+   Pemilihan individu berdasarkan probabilitas proporsional fitness.
+4. **Crossover**  
+   Dua parent ditukar sebagian gennya di titik potong acak untuk menghasilkan anak.
+5. **Mutasi**  
+   Karakter pada anak dapat berubah acak sesuai mutation rate.
+6. **Generasi Baru & Evaluasi**  
+   Populasi baru ditampilkan, lalu dihitung kembali nilai fitness-nya.
 
-## Contoh Alur Penggunaan
+## Contoh Alur Demo Penggunaan
 1. Pilih menu `1` untuk melihat kamus.
-2. Pilih menu `2`, masukkan kata (misal: `kopi`) agar target menjadi kata Aceh `kupi`.
-3. Pilih menu `3` untuk menjalankan GA satu generasi penuh.
-4. Gunakan menu `4` sampai `9` untuk melihat detail setiap tahap.
-5. Pilih menu `10` untuk keluar.
+2. Pilih menu `2`, lalu masukkan kata (contoh: `kopi`) agar target menjadi `kupi`.
+3. Pilih menu `3` untuk menjalankan GA satu generasi lengkap.
+4. Pilih menu `4`–`9` untuk melihat rincian tiap tahap.
+5. Pilih menu `10` untuk keluar program.
+
+## Catatan Presentasi
+Saat demo, tampilkan urutan:
+1) pemilihan target kata,  
+2) proses satu generasi GA,  
+3) evaluasi fitness populasi baru.  
+Urutan ini menunjukkan semua komponen wajib tugas sudah terpenuhi.

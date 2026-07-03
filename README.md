@@ -80,10 +80,3 @@ Untuk target kata Aceh yang dipilih, proses berjalan sebagai berikut:
 3. Pilih menu `3` untuk menjalankan GA satu generasi lengkap.
 4. Pilih menu `4`–`9` untuk melihat rincian tiap tahap.
 5. Pilih menu `10` untuk keluar program.
-
-## Catatan Presentasi
-Saat demo, tampilkan urutan:
-1) pemilihan target kata,  
-2) proses satu generasi GA,  
-3) evaluasi fitness populasi baru.  
-Urutan ini menunjukkan semua komponen wajib tugas sudah terpenuhi.

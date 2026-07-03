@@ -112,7 +112,7 @@ def tampilkan_kamus() -> None:
 
 
 def cari_kata() -> str | None:
-    kata = input("Masukkan kata (Aceh/Indonesia): ").strip().lower()
+    kata = input("Peulheueh kata (Aceh/Indonesia): ").strip().lower()
     hasil = [
         entry
         for entry in ACEH_DICTIONARY
@@ -125,14 +125,14 @@ def cari_kata() -> str | None:
 
     entry = hasil[0]
     print(f"Hasil: {entry['aceh']} = {entry['indonesia']}")
-    print(f"Target GA diset ke kata Aceh: {entry['aceh']}")
+    print(f"Target GA ka dipeugot ke kata Aceh: {entry['aceh']}")
     return entry["aceh"]
 
 
 def print_population(population: list[str], title: str) -> None:
     print(f"\n=== {title} ===")
     if not population:
-        print("Data ka teupreh keu jalankan GA dulu.")
+        print("Data goh na. Jalankan GA sigoe lom.")
         return
     for i, individual in enumerate(population, start=1):
         print(f"{i}. {individual}")
@@ -141,7 +141,7 @@ def print_population(population: list[str], title: str) -> None:
 def print_fitness(population: list[str], fitness_scores: list[int], target: str | None) -> None:
     print("\n=== Nilai Fitness ===")
     if not population or not fitness_scores or not target:
-        print("Data fitness hanjeut ditampilkan. Jalankan proses sesuai urutan.")
+        print("Data fitness han jeuet ditampe. Jalankan proses sesuai urutan.")
         return
     for i, (individual, score) in enumerate(zip(population, fitness_scores), start=1):
         print(f"{i}. {individual} -> fitness {score}/{len(target)}")
@@ -152,7 +152,7 @@ def print_roulette(selected: list[str]) -> None:
 
 
 def print_crossover(crossover_pairs: list[tuple[str, str, str, str]]) -> None:
-    print("\n=== Cross Over ===")
+    print("\n=== Cross Over (Silang) ===")
     if not crossover_pairs:
         print("Data crossover hana na. Jalankan proses sesuai urutan.")
         return
@@ -172,7 +172,7 @@ def print_mutation(mutation_result: list[str]) -> None:
 
 
 def pilih_target() -> str:
-    print("\nPilih target kata Aceh dari kamus:")
+    print("\nPilih target kata Aceh nibak kamus:")
     for idx, entry in enumerate(ACEH_DICTIONARY, start=1):
         print(f"{idx}. {entry['aceh']} ({entry['indonesia']})")
     while True:
@@ -201,7 +201,7 @@ def main() -> None:
     state = GAState()
 
     print("Aplikasi GA Kamus Bahasa Aceh")
-    print("Peugot tugas Rekayasa Komputasional")
+    print("Keu tugas Rekayasa Komputasional")
 
     while True:
         tampilkan_menu()
@@ -215,7 +215,6 @@ def main() -> None:
                 state.target = target
         elif pilihan == "3":
             target = state.target or pilih_target()
-            state.target = target
             state = ga.run_one_generation(target)
             print(f"\nGA ka dijalankan untuk target: {target}")
             print("Satu generasi lengkap ka diproses (fitness, roulette, crossover, mutasi, evaluasi).")
